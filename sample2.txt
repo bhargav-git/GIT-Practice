@@ -1,1 +1,2 @@
+This is another new line added to this file.
 Hi World.. This is Sample File.
