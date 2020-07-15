@@ -1,0 +1,45 @@
+Practising the GIT COMMANDS
+===========================
+git stash :- save changes made in the current index and working directory for later
+
+=> You're in the middle of some changes but something comes up that you need to jump over to, 
+   like a so-urgent-right-now bugfix, but don't want to commit or lose your current edits. 
+   git stash is there for you.
+
+=> It add current changes to the stack.
+
+=> Stashing takes the current state of the working directory and index, puts it on a stack for later, 
+   and gives you back a clean working directory. It will then leave you at the state of the last commit.
+
+=> If you have untracked files, "git stash" will not include them. 
+   You can either stage those files with "git add" (you don't have to commit) before stashing, or, 
+   if you have a recent Git version (1.7.7 or above), 
+	you can use "git stash -u" to also stash also unversioned files.  OK
+
+git stash list :- view stashes currently on the stack
+git stash apply :- grab the item from the stash list and apply to current working directory
+		stash apply stash@{1}
+git stash drop :- remove an item from the stash list
+
+>> After apply "git reset HEAD" 	- 	It will undo the tracked(Stage) to untracked(Unstage)
+>> git restore --staged <fileName> 	- 	To unstage/untrack the changes
+>> git restore <filename> 		- 	To discard/undo changes in working directory
+>> git reset --soft HEAD~ 		- 	It undo the last commit and put the changed files to unstage(untracked)
+>> git reset --hard HEAD~		-	unstage files AND undo any changes in the working directory since last commit
+>> git stash 				- 	It You're in the middle of some changes but something comes up that you need to jump over to, like a                                           so-urgent-right-now bugfix, but don't want to commit or lose your current edits. git stash is there for you.
+
+                                            	If you have untracked files, "git stash" will not include them. You can either stage those files with "git add" (you don't have to commit) before stashing,
+											
+>> git stash -u 			-	If you have a recent Git version (1.7.7 or above), you can use this to also stash also unversioned files.	
+>> git stash list 			-	List/Queue of current stash items.
+>> git stash apply			- 	It will reapply the last added stash item to the working directory. //from the stash and apply.		
+>> git stash apply stash@{2}		-	If want to reapply specific from list it will be helpful
+>> git stash pop			- 	If you also want to remove the item from the stack at the same time, use git stash pop instead.
+>> git stash drop 			-	It will remove an item from the stash list. By default this will remove the last added stash item. 
+>> git stash drop stash@{0}		- 	It will remove specific item from the stash list.
+>> git stash clear			-	It clears the all the stored items.
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+In a nutshell, run "git stash" to quickly save some changes that you're not ready to commit or save, but want to come back to while you work on something else.
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+>> git reset --soft HEAD~ - It undo the last commit and put the changed files to unstage(untracked)
